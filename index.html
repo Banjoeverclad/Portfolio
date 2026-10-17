@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob Lavender | Combat & Systems Designer</title>
+<meta name="description" content="Jacob Lavender, Lead Combat & Systems Designer. Fortnite, Borderlands 3, Borderlands 2 VR, and unannounced Unreal Engine 5 games. Reels and resume.">
+<meta property="og:title" content="Jacob Lavender | Combat & Systems Designer">
+<meta property="og:description" content="Design reels, shipped games, and resume.">
+<meta property="og:image" content="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/397540/library_hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0b0f;
+    --bg2: #12141b;
+    --ink: #f4efe6;
+    --muted: #9198a6;
+    --amber: #ffb43a;
+    --hot: #ff5a36;
+    --line: rgba(244, 239, 230, .12);
+    --display: "Anton", Impact, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 "Space Grotesk", system-ui, sans-serif; overflow-x: clip; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  .label { font: 700 13px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+  .display { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .9; letter-spacing: .01em; margin: 0; }
+  .outline { color: transparent; -webkit-text-stroke: 2px var(--amber); }
+
+  /* Film grain over everything */
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Nav */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; background: linear-gradient(rgba(10,11,15,.85), rgba(10,11,15,0)); }
+  .mono-mark { font: 24px var(--display); text-decoration: none; letter-spacing: .04em; }
+  .mono-mark span { color: var(--amber); }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; align-items: center; }
+  nav a { font: 700 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+  nav a:hover { color: var(--amber); }
+  .pill { border: 2px solid var(--amber); color: var(--amber); padding: 8px 14px; border-radius: 999px; }
+  .pill:hover { background: var(--amber); color: var(--bg) !important; }
+
+  /* Hero: drifting wall of game art behind giant type */
+  .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; padding: 120px 0 64px; }
+  .mosaic { position: absolute; inset: -20% -10%; transform: rotate(-8deg); display: flex; flex-direction: column; gap: 14px; opacity: .85; }
+  .row { display: flex; gap: 14px; width: max-content; animation: drift 90s linear infinite; }
+  .row:nth-child(2) { animation-direction: reverse; animation-duration: 110s; }
+  .row img { width: 340px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; filter: saturate(1.15); }
+  @keyframes drift { to { transform: translateX(-50%); } }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(transparent 55%, var(--bg)), linear-gradient(90deg, rgba(10,11,15,.93) 0%, rgba(10,11,15,.72) 50%, rgba(10,11,15,.3) 100%); }
+  .hero .wrap { position: relative; z-index: 2; width: 100%; }
+  .hero .label { margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(72px, 15vw, 220px); }
+  .hero h1 .outline { -webkit-text-stroke-width: 3px; }
+  .tagline { font: 400 clamp(26px, 3.6vw, 44px)/1.05 var(--display); text-transform: uppercase; margin: 18px 0 10px; }
+  .tagline em { font-style: normal; color: var(--amber); }
+  .intro { max-width: 560px; color: #cfcabf; margin: 0 0 28px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; font: 700 13px var(--mono); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--amber); transition: transform .15s, box-shadow .15s; }
+  .btn.solid { background: var(--amber); color: var(--bg); box-shadow: 6px 6px 0 var(--hot); }
+  .btn.solid:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--hot); }
+  .btn.ghost { color: var(--amber); }
+  .btn.ghost:hover { background: rgba(255,180,58,.1); }
+
+  /* Ticker */
+  .ticker-clip { overflow: hidden; padding: 12px 0; margin-top: -24px; position: relative; z-index: 3; }
+  .ticker { background: var(--amber); color: var(--bg); overflow: hidden; transform: rotate(-1.5deg); margin: 0 -20px; }
+  .ticker div { display: flex; width: max-content; animation: drift 40s linear infinite; }
+  .ticker span { font: 28px/1 var(--display); text-transform: uppercase; padding: 14px 18px; white-space: nowrap; }
+  .ticker b { color: var(--hot); font-weight: 400; }
+
+  section { position: relative; }
+  .section-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 36px; }
+  .section-head h2 { font-size: clamp(48px, 8vw, 104px); }
+
+  /* Reels */
+  .reels { padding: 120px 0 40px; }
+  .reel { position: relative; overflow: hidden; border-radius: 4px; margin-bottom: 48px; }
+  .reel-bg { position: absolute; inset: 0; background: center / cover no-repeat; filter: blur(2px) brightness(.32) saturate(1.2); transform: scale(1.05); }
+  .reel-inner { position: relative; display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: center; padding: 48px; }
+  .reel:nth-child(odd) .reel-copy { order: 2; }
+  .reel-num { font: 120px/.8 var(--display); }
+  .reel-copy h3 { font-size: clamp(44px, 6vw, 84px); margin: 10px 0 8px; }
+  .reel-copy .label { color: var(--ink); opacity: .8; }
+  .reel-copy ul { list-style: none; padding: 0; margin: 20px 0 0; }
+  .reel-copy li { padding: 10px 0; border-top: 1px solid var(--line); }
+  .reel-copy li::before { content: "▸ "; color: var(--amber); }
+  .player { position: relative; aspect-ratio: 16 / 9; width: 100%; border: 0; padding: 0; cursor: pointer; background: #000 center / cover no-repeat; outline: 3px solid var(--amber); outline-offset: 8px; }
+  .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .play { position: absolute; inset: 0; margin: auto; width: 96px; height: 96px; border-radius: 50%; background: var(--amber); display: grid; place-items: center; box-shadow: 0 0 0 12px rgba(255,180,58,.25); transition: transform .2s; }
+  .player:hover .play { transform: scale(1.1); }
+  .player.soon { cursor: default; }
+  .player.soon::after { content: "Reel dropping soon"; position: absolute; inset: 0; display: grid; place-items: center; background: rgba(10,11,15,.6); font: 700 15px var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--amber); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 40px 0 0; }
+  .stat { padding: 34px 20px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat b { display: block; font: clamp(56px, 7vw, 96px)/.9 var(--display); }
+  .stat:nth-child(odd) b { color: transparent; -webkit-text-stroke: 2px var(--amber); }
+  .stat span { display: block; margin-top: 10px; color: var(--muted); font: 500 13px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+
+  /* Work bento */
+  .work { padding: 120px 0 60px; }
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 300px; gap: 14px; }
+  .card { position: relative; overflow: hidden; border-radius: 4px; background: var(--bg2); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; isolation: isolate; }
+  .card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .6s ease, filter .6s; }
+  .card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(10,11,15,.1) 10%, rgba(10,11,15,.95) 78%); }
+  .card:hover img { transform: scale(1.06); }
+  .card .label { color: var(--amber); margin-bottom: 8px; }
+  .card h3 { font-size: clamp(30px, 3.4vw, 48px); }
+  .card .role { font-weight: 700; margin: 8px 0 2px; }
+  .card p { margin: 0; color: #cfcabf; font-size: 15px; max-width: 520px; }
+  .yr { position: absolute; top: 20px; right: 20px; font: 700 12px var(--mono); letter-spacing: .1em; background: rgba(10,11,15,.75); padding: 6px 10px; border: 1px solid var(--line); }
+  .w2 { grid-column: span 2; } .w3 { grid-column: span 3; } .w4 { grid-column: span 4; }
+  .tall { grid-row: span 2; }
+  /* Unannounced projects: hazard stripes and a stamp instead of art */
+  .classified { background: repeating-linear-gradient(-45deg, #15171e 0 22px, #1b1e27 22px 44px); }
+  .classified img { filter: grayscale(1) brightness(.35) contrast(1.1); }
+  .stamp { position: absolute; top: 26px; left: 22px; font: 700 13px var(--mono); letter-spacing: .2em; color: var(--hot); border: 2px solid var(--hot); padding: 6px 10px; transform: rotate(-6deg); text-transform: uppercase; }
+  .redact { display: inline-block; height: .9em; background: var(--ink); vertical-align: -1px; opacity: .85; }
+
+  /* Gallery filmstrip */
+  .gallery { padding: 60px 0 120px; }
+  .strip { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(16px, calc((100vw - 1240px) / 2 + 16px)) 16px; scroll-padding-left: max(16px, calc((100vw - 1240px) / 2 + 16px)); scrollbar-color: var(--amber) transparent; }
+  .strip figure { margin: 0; flex: 0 0 min(560px, 82vw); scroll-snap-align: start; }
+  .strip img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; }
+  .strip figcaption { font: 700 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+
+  /* Skills */
+  .skills { padding: 100px 0; background: var(--bg2); }
+  .skill-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .skill-cols ul { list-style: none; padding: 0; margin: 16px 0 0; }
+  .skill-cols li { font: clamp(24px, 2.6vw, 34px)/1.15 var(--display); text-transform: uppercase; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .skill-cols li:hover { color: var(--amber); }
+
+  /* Quotes */
+  .quotes { padding: 120px 0; overflow: hidden; }
+  .quotes .bgart { position: absolute; inset: 0; background: center / cover no-repeat; filter: brightness(.18) saturate(1.1); }
+  .quotes .wrap { position: relative; }
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  blockquote { margin: 0; }
+  blockquote::before { content: "\201C"; display: block; font: 140px/.6 var(--display); color: var(--amber); height: 60px; }
+  blockquote p { font: 500 clamp(22px, 2.3vw, 30px)/1.3 "Space Grotesk", sans-serif; margin: 0 0 16px; }
+  cite { font: 700 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; font-style: normal; color: var(--amber); }
+
+  /* Closing CTA */
+  .cta { padding: 140px 0 60px; text-align: center; }
+  .cta h2 { font-size: clamp(64px, 12vw, 180px); }
+  .cta .ctas { justify-content: center; margin-top: 36px; }
+  .cta .where { color: var(--muted); font: 500 13px var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-top: 28px; }
+  footer { border-top: 1px solid var(--line); padding: 24px 16px; text-align: center; color: var(--muted); font: 500 12px var(--mono); letter-spacing: .1em; }
+
+  /* Scroll reveal (only when JS runs) */
+  .js .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    nav ul li:not(:last-child) { display: none; }
+    .reel-inner { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+    .reel:nth-child(odd) .reel-copy { order: 0; }
+    .reel-num { font-size: 80px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .bento { grid-template-columns: 1fr; grid-auto-rows: 320px; }
+    .w2, .w3, .w4 { grid-column: auto; }
+    .tall { grid-row: auto; }
+    .skill-cols, .quote-grid { grid-template-columns: 1fr; }
+    .row img { width: 220px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .row, .ticker div { animation: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="mono-mark" href="#top">J<span>L</span></a>
+  <ul>
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="pill" href="Jacob_Lavender_Resume.pdf" download>Resume ↓</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="mosaic" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="label">Lead Combat &amp; Systems Designer &nbsp;/&nbsp; 10 years &nbsp;/&nbsp; AAA</div>
+    <h1 class="display">Jacob<br><span class="outline">Lavender</span></h1>
+    <p class="tagline">Combat. Abilities. Enemy AI. <em>The systems that hold it together.</em></p>
+    <p class="intro">Designed and built combat for Fortnite, Borderlands 3, Borderlands 2 VR, and unannounced Unreal Engine 5 games, and led the teams that made it.</p>
+    <div class="ctas">
+      <a class="btn solid" href="#reels">▶ Watch the reels</a>
+      <a class="btn ghost" href="Jacob_Lavender_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker-clip" aria-hidden="true"><div class="ticker"><div></div></div></div>
+
+<section class="reels" id="reels">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="label">01</span><h2 class="display">Reels</h2></div>
+
+    <article class="reel reveal">
+      <div class="reel-bg" style="background-image:url(https://static.wixstatic.com/media/99bb31_9c11e40b16f0449bae8f5b2384c647f4~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_80,enc_auto/fortnite.jpg)"></div>
+      <div class="reel-inner">
+        <div class="reel-copy">
+          <div class="reel-num outline">01</div>
+          <h3 class="display">Fortnite</h3>
+          <div class="label">Gameplay Designer III · Epic Games · 2020 – 2023</div>
+          <ul>
+            <li>Shipped 11 weapons and items used by 80M+ players.</li>
+            <li>Built the War Effort and Chrome phasing systems.</li>
+            <li>Rebuilt the melee weapon system on GAS.</li>
+          </ul>
+        </div>
+        <!-- Fortnite reel: paste its YouTube video ID into data-yt (the part after watch?v=) -->
+        <button class="player" data-yt="" data-poster="https://static.wixstatic.com/media/99bb31_9c11e40b16f0449bae8f5b2384c647f4~mv2.jpg/v1/fill/w_1280,h_720,al_c,q_80,enc_auto/fortnite.jpg" aria-label="Play the Fortnite design reel"></button>
+      </div>
+    </article>
+
+    <article class="reel reveal">
+      <div class="reel-bg" style="background-image:url(https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/397540/library_hero.jpg)"></div>
+      <div class="reel-inner">
+        <div class="reel-copy">
+          <div class="reel-num outline">02</div>
+          <h3 class="display">Borderlands 3</h3>
+          <div class="label">Systems Designer · Gearbox Software · 2019 – 2020</div>
+          <ul>
+            <li>Built chests, doors, vehicles, weapons, pickups, and hazards.</li>
+            <li>Built networked shooting, projectile, and vehicle systems.</li>
+            <li>Designed encounters for the Bounty of Blood DLC.</li>
+          </ul>
+        </div>
+        <button class="player" data-yt="MZP5dUx6NRg" aria-label="Play the Borderlands 3 systems design reel"></button>
+      </div>
+    </article>
+
+    <div class="stats reveal">
+      <div class="stat"><b>10</b><span>Years designing combat &amp; systems</span></div>
+      <div class="stat"><b>80M+</b><span>Fortnite players used my weapons &amp; items</span></div>
+      <div class="stat"><b>22M+</b><span>Borderlands 3 copies sold</span></div>
+      <div class="stat"><b>20</b><span>Person team led on Borderlands 2 VR</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="label">02</span><h2 class="display">The work</h2></div>
+    <div class="bento">
+
+      <article class="card classified w4 reveal">
+        <span class="stamp">Unannounced</span><span class="yr">2025 – NOW</span>
+        <div class="label">ProbablyMonsters · UE5</div>
+        <h3 class="display">Co-op action RPG <span class="redact" style="width:3.2em"></span></h3>
+        <div class="role">Lead &amp; Principal Combat Designer</div>
+        <p>Led the combat team and raised the external playtest score from 61 to 85. Built 32 player abilities and 20+ enemies.</p>
+      </article>
+
+      <article class="card classified w2 reveal">
+        <img src="https://static.wixstatic.com/media/99bb31_a7b3fdb6e62f492895f3589f57c2bf2a~mv2.jpg/v1/fill/w_900,h_600,al_c,q_80,enc_auto/jos.jpg" alt="" loading="lazy">
+        <span class="stamp">Unannounced</span><span class="yr">2024 – 25</span>
+        <div class="label">Jar of Sparks · UE5</div>
+        <h3 class="display">Action-adventure</h3>
+        <div class="role">Senior Combat Designer</div>
+        <p>Designed the core combat loop and 3Cs: 20 abilities, 8 melee combos, 3 ranged weapons.</p>
+      </article>
+
+      <article class="card classified w2 tall reveal">
+        <img src="https://static.wixstatic.com/media/99bb31_c7c36a9f9da34f479200adda1456db4e~mv2.jpg/v1/fill/w_900,h_1200,al_c,q_80,enc_auto/pcf.jpg" alt="" loading="lazy">
+        <span class="stamp">Unannounced</span><span class="yr">2023 – 24</span>
+        <div class="label">People Can Fly · UE5</div>
+        <h3 class="display">Hero extraction shooter</h3>
+        <div class="role">Senior Systems Designer</div>
+        <p>Owned the core loop; built a modular system for thousands of procedural spells, plus a mod system.</p>
+      </article>
+
+      <article class="card w4 tall reveal">
+        <img src="https://static.wixstatic.com/media/99bb31_9c11e40b16f0449bae8f5b2384c647f4~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_80,enc_auto/fortnite.jpg" alt="Fortnite key art" loading="lazy">
+        <span class="yr">2020 – 23</span>
+        <div class="label">Epic Games · 8 live seasons</div>
+        <h3 class="display">Fortnite</h3>
+        <div class="role">Gameplay Designer III</div>
+        <p>Shipped 11 weapons and items used by 80M+ players; cut designer onboarding from 3 months to 3 weeks.</p>
+      </article>
+
+      <article class="card w4 reveal">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/397540/library_hero.jpg" alt="Borderlands 3 art" loading="lazy">
+        <span class="yr">2019 – 20</span>
+        <div class="label">Gearbox Software · UE4</div>
+        <h3 class="display">Borderlands 3 + Bounty of Blood</h3>
+        <div class="role">Systems Designer</div>
+        <p>Built networked shooting, projectile, and vehicle systems; designed the Bounty of Blood encounters.</p>
+      </article>
+
+      <article class="card w2 reveal">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286680/ss_e7499467fb6dbff279fdffd96ec380b157c5791a.1920x1080.jpg" alt="Tiny Tina's Wonderlands screenshot" loading="lazy">
+        <span class="yr">2020</span>
+        <div class="label">Gearbox Software</div>
+        <h3 class="display">Tiny Tina's Wonderlands</h3>
+        <div class="role">Systems Designer, early development</div>
+      </article>
+
+      <article class="card w2 reveal">
+        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/991260/library_hero.jpg" alt="Borderlands 2 VR art" loading="lazy">
+        <span class="yr">2017 – 19</span>
+        <div class="label">Gearbox Software · PSVR &amp; PC VR</div>
+        <h3 class="display">Borderlands 2 VR</h3>
+        <div class="role">Lead Designer</div>
+        <p>Led a 20-person team; pitched and secured PlayStation exclusivity with Sony.</p>
+      </article>
+
+      <article class="card w2 reveal">
+        <img src="https://static.wixstatic.com/media/99bb31_f75f55d36d20438d9e9b8db226e51e47~mv2.jpg/v1/fill/w_900,h_600,al_c,q_80,enc_auto/pt.jpg" alt="Penn & Teller VR art" loading="lazy">
+        <div class="label">Gearbox Software · VR</div>
+        <h3 class="display">Penn &amp; Teller VR</h3>
+        <div class="role">Systems Designer</div>
+      </article>
+
+      <article class="card w2 reveal">
+        <img src="https://static.wixstatic.com/media/99bb31_07e0d10f4b714c23871ffad17239233b~mv2.jpg/v1/fill/w_900,h_600,al_c,q_80,enc_auto/mouse.jpg" alt="Mouse Playhouse VR screenshot" loading="lazy">
+        <span class="yr">2016</span>
+        <div class="label">SMU Guildhall · Steam</div>
+        <h3 class="display">Mouse Playhouse VR</h3>
+        <div class="role">Systems Designer. Where it started.</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery" aria-label="Screenshots from shipped games">
+  <div class="wrap"><div class="section-head reveal"><span class="label">03</span><h2 class="display">In the field</h2></div></div>
+  <div class="strip"></div>
+</section>
+
+<section class="skills">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="label">04</span><h2 class="display">Toolkit</h2></div>
+    <div class="skill-cols">
+      <div class="reveal"><div class="label">// Design</div>
+        <ul><li>Combat &amp; 3Cs</li><li>Player abilities</li><li>Enemy AI &amp; bosses</li><li>Encounters</li><li>Progression &amp; economy</li><li>Live service</li></ul></div>
+      <div class="reveal"><div class="label">// Build</div>
+        <ul><li>Unreal Engine 5</li><li>Blueprints</li><li>Gameplay Ability System</li><li>State Trees</li><li>Unity · Lua</li><li>Telemetry &amp; balance models</li></ul></div>
+      <div class="reveal"><div class="label">// Lead</div>
+        <ul><li>Mentoring</li><li>Hiring</li><li>Design reviews</li><li>Roadmaps &amp; scope</li><li>Pitching</li><li>Publisher relations</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="bgart" style="background-image:url(https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286680/library_hero.jpg)"></div>
+  <div class="wrap">
+    <div class="section-head reveal"><span class="label">05</span><h2 class="display">Word from the team</h2></div>
+    <div class="quote-grid">
+      <blockquote class="reveal">
+        <p>He led the design of the modular ability system and player abilities with exceptional clarity and creativity.</p>
+        <cite>Mikhail Stupnikov · People Can Fly</cite>
+      </blockquote>
+      <blockquote class="reveal">
+        <p>Jacob is a pleasure to work with and a talented designer. He requires minimal direction to achieve great results.</p>
+        <cite>Steve Dyck · Jar of Sparks</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap reveal">
+    <div class="label">06 / Contact</div>
+    <h2 class="display">Let's build<br><span class="outline">the next fight</span></h2>
+    <div class="ctas">
+      <a class="btn solid" href="Jacob_Lavender_Resume.pdf" download>Download resume</a>
+      <a class="btn ghost" href="mailto:Lavender.Jacob@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/jacoblavenderdesign" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="where">Texas · Open to remote and relocation</div>
+  </div>
+</section>
+
+<footer>© 2026 Jacob Lavender · Game art belongs to its publishers</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  const SS = 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/';
+  const WX = (id, w, h) => `https://static.wixstatic.com/media/${id}/v1/fill/w_${w},h_${h},al_c,q_80,enc_auto/a.jpg`;
+  const steam = (app, hash, size = '600x338') => `${SS}${app}/ss_${hash}.${size}.jpg`;
+  const FN = '99bb31_9c11e40b16f0449bae8f5b2384c647f4~mv2.jpg', BOB = '99bb31_313c48a9aa35451386485745595dac7d~mv2.jpg',
+        BL2VR = '99bb31_d046730ede7f4fac87b2a6d1432af5e4~mv2_d_3840_2160_s_2.jpg', BL3 = '99bb31_19a4b5ec15e54aa7a4893e4336496941~mv2.jpg',
+        PTVR = '99bb31_f75f55d36d20438d9e9b8db226e51e47~mv2.jpg', MPVR = '99bb31_07e0d10f4b714c23871ffad17239233b~mv2.jpg',
+        PCF = '99bb31_c7c36a9f9da34f479200adda1456db4e~mv2.jpg';
+
+  // Hero wall of game art: three rows, each doubled so the drift loops seamlessly
+  const rows = [
+    [steam(397540, '9868ee40f39749a4c8222502cf86525ee32c1bef'), WX(FN, 600, 338), steam(991260, '68e8ee4f8014fff816cff49d7f48ba418d14ae1f'),
+     steam(1286680, '9eec41e5b6d47e4a63fb7f0a0eed4819baeee4f5'), WX(BOB, 600, 338), steam(397540, '3531d9f91265d94fc06f6587eba1ca49f2c423d1')],
+    [WX(PTVR, 600, 338), steam(397540, '624638e46ed590d4bb1835558a5ab0981f7baadd'), steam(1286680, 'e7499467fb6dbff279fdffd96ec380b157c5791a'),
+     steam(991260, '5de815a5212ecd32b3e35080bc8a1513d7c74099'), steam(397540, 'f983c0c1cc566b8ca21a6c45e6f044b57aff0f0f'), WX(MPVR, 600, 338)],
+    [WX(BL2VR, 600, 338), steam(397540, 'f2053d688ec55f2269c47b24313539938bef9064'), steam(1286680, 'ca4fd814a118de1f7cc0ce8c944e9885a58f20f2'),
+     WX(BL3, 600, 338), steam(991260, '158df652c23393018a1c68a5308fdb828798cc9c'), WX(PCF, 600, 338)],
+  ];
+  document.querySelector('.mosaic').innerHTML = rows.map(r =>
+    `<div class="row">${[...r, ...r].map(u => `<img src="${u}" alt="">`).join('')}</div>`).join('');
+
+  // Ticker
+  const games = ['Fortnite', 'Borderlands 3', "Tiny Tina's Wonderlands", 'Borderlands 2 VR', 'Penn & Teller VR', 'Mouse Playhouse VR', 'Unreal Engine 5'];
+  const tick = games.map(g => `<span>${g}</span><span><b>✦</b></span>`).join('');
+  document.querySelector('.ticker div').innerHTML = tick + tick;
+
+  // Filmstrip
+  const shots = [
+    [steam(397540, '3531d9f91265d94fc06f6587eba1ca49f2c423d1', '1920x1080'), 'Borderlands 3'],
+    [steam(991260, '68e8ee4f8014fff816cff49d7f48ba418d14ae1f', '1920x1080'), 'Borderlands 2 VR'],
+    [steam(1286680, '9eec41e5b6d47e4a63fb7f0a0eed4819baeee4f5', '1920x1080'), "Tiny Tina's Wonderlands"],
+    [steam(397540, 'f983c0c1cc566b8ca21a6c45e6f044b57aff0f0f', '1920x1080'), 'Borderlands 3'],
+    [WX(BOB, 1430, 645), 'Borderlands 3: Bounty of Blood'],
+    [steam(991260, '5de815a5212ecd32b3e35080bc8a1513d7c74099', '1920x1080'), 'Borderlands 2 VR'],
+    [steam(397540, '9868ee40f39749a4c8222502cf86525ee32c1bef', '1920x1080'), 'Borderlands 3'],
+    [steam(1286680, 'ca4fd814a118de1f7cc0ce8c944e9885a58f20f2', '1920x1080'), "Tiny Tina's Wonderlands"],
+  ];
+  document.querySelector('.strip').innerHTML = shots.map(([u, c]) =>
+    `<figure><img src="${u}" alt="${c} screenshot" loading="lazy"><figcaption>${c}</figcaption></figure>`).join('');
+
+  // Reels load only when clicked: shows a thumbnail, keeps the page fast
+  document.querySelectorAll('.player').forEach(el => {
+    const id = el.dataset.yt;
+    el.style.backgroundImage = `url(${id ? `https://i.ytimg.com/vi/${id}/maxresdefault.jpg` : el.dataset.poster})`;
+    if (!id) { el.classList.add('soon'); el.disabled = true; return; }
+    el.innerHTML = '<span class="play"><svg width="34" height="34" viewBox="0 0 24 24" fill="#0a0b0f"><path d="M8 5v14l11-7z"/></svg></span>';
+    el.addEventListener('click', () => {
+      el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="${el.getAttribute('aria-label')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    }, { once: true });
+  });
+
+  // Fade sections up as they scroll in
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
